@@ -1,0 +1,104 @@
+<h1 class="statisticH1">STATISTICS</h1>
+<div id="chartWrapper">
+  <div class="dashStatistics">
+    <div class="totalBkgStat">
+      <p class="dashBrdTotValue">{{ totalBookings }}</p>
+      <p class="dashBrdTotLabel">BOOKINGS</p>
+    </div>
+    <div class="totalPplStat">
+      <p class="dashBrdTotValue">{{ totalPeople }}</p>
+      <p class="dashBrdTotLabel">PEOPLE</p>
+    </div>
+    <div class="totalMnyStat">
+      <p class="dashBrdTotValue">{{ totalMoney }}K</p>
+      <p class="dashBrdTotLabel">MONEY</p>
+    </div>
+  </div>
+  <!--======== PRVI CHART U TYPESCRIPTU ========-->
+  <h3 class="chartH3">TOTAL PEOPLE</h3>
+  <mat-form-field appearance="fill" class="matfield-people">
+    <mat-select [(value)]="selectedPeriodPeople" (selectionChange)="onChangePeopleMonth()">
+      <mat-option value="6 months">6 months</mat-option>
+      <mat-option value="1 year">1 year</mat-option>
+      <mat-option value="2 years">2 years</mat-option>
+      <mat-option value="All">All</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="chartsExampler">
+    <canvas id="myPeopleChart"></canvas>
+  </div>
+  <!--======== TRECI CHART U TYPESCRIPTU ========-->
+  <h3 class="chartH3">MONEY BY PAY TYPE</h3>
+  <mat-form-field appearance="fill" class="matfield-people">
+    <mat-select [(value)]="selectedPeriodTypes" (selectionChange)="onChangePayTypeMonth()">
+      <mat-option value="6 months">6 months</mat-option>
+      <mat-option value="1 year">1 year</mat-option>
+      <mat-option value="2 years">2 years</mat-option>
+      <mat-option value="All">All</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="chartsExampler">
+    <canvas id="myPaymentChart"></canvas>
+  </div>
+  <!--======== DRUGI CHART U TYPESCRIPTU ========-->
+  <h3 class="chartH3">TOTAL MONEY</h3>
+  <mat-form-field appearance="fill" class="matfield-people">
+    <mat-select [(value)]="selectedPeriodMoney" (selectionChange)="onChangeMoneyMonth()">
+      <mat-option value="6 months">6 months</mat-option>
+      <mat-option value="1 year">1 year</mat-option>
+      <mat-option value="2 years">2 years</mat-option>
+      <mat-option value="All">All</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="chartsExampler">
+    <canvas id="myMoneyChart"></canvas>
+  </div>
+  <!--======== CETVRTI CHART U TYPESCRIPTU ========-->
+  <h3 class="chartH3">PEOPLE BY CITY</h3>
+  <mat-form-field appearance="fill" class="matfield-people">
+    <mat-select [(value)]="selectedPeriodPplCity" (selectionChange)="onChangePeopleCityMonth()">
+      <mat-option value="6 months">6 months</mat-option>
+      <mat-option value="1 year">1 year</mat-option>
+      <mat-option value="2 years">2 years</mat-option>
+      <mat-option value="All">All</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="chartsExampler">
+    <canvas id="myPeopleCityChart"></canvas>
+  </div>
+  <!--======== PETI CHART U TYPESCRIPTU ========-->
+  <h3 class="chartH3">ALL BY CITY</h3>
+  <mat-form-field appearance="fill" class="matfield-people">
+    <mat-select [(value)]="selectedInfoCity" (selectionChange)="onChangeInfoCity()">
+      <mat-option value="Belgrade">Belgrade</mat-option>
+      <mat-option value="Budva">Budva</mat-option>
+      <mat-option value="Lisabon">Lisabon</mat-option>
+      <mat-option value="Barcelona">Barcelona</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="matfield-people">
+    <mat-select [(value)]="selectedPeriodInfoBkng" (selectionChange)="onChangeInfoPeriod()">
+      <mat-option value="6 months">6 months</mat-option>
+      <mat-option value="1 year">1 year</mat-option>
+      <mat-option value="2 years">2 years</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="chartsExampler">
+    <canvas id="myTotalInfoBookings"></canvas>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

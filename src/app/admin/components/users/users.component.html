@@ -1,0 +1,38 @@
+<form>
+  <div class="form-group">
+    <label for="forCity">For City:</label>
+    <select class="form-control" id="forCity" name="forCity" [(ngModel)]="user.for_city" required>
+      <option value="All">All Cities</option>
+      <option value="Belgrade">Belgrade</option>
+      <option value="Budva">Budva</option>
+      <option value="Lisabon">Lisabon</option>
+      <option value="Barcelona">Barcelona</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="user_name">Username:</label>
+    <input type="text" class="form-control" id="user_name" name="user_name" [(ngModel)]="user.user_name" (blur)="validateUsername()" required inputmode="text" autocomplete="off">
+  </div>
+  <div class="form-group">
+    <label for="user_password">Password:</label>
+    <input type="password" class="form-control" id="user_password" name="user_password" [(ngModel)]="user.user_password" (blur)="validatePassword()" required inputmode="text" autocomplete="off">
+  </div>
+  <div class="addBookingBtns">
+    <button type="button" class="btn btn-primary createBooking" id="addBkngCreateBtn" (click)="saveUser()" [disabled]="!isUserValid()">ADD USER</button>
+  </div>
+</form>
+<div class="row mt-5">
+  <div class="col-md-6 mt-3 listUserItems">
+    <div class="rowLabelUserList">
+      <p class="oneParagraphUserL">For City</p>
+      <p class="oneParagraphUserL">Username</p>
+    </div>
+    <ul class="list-group mb-3">
+      <li *ngFor="let user of users" class="oneRowUserList">
+        <p class="oneListUserP">{{ user.for_city }}</p>
+        <p class="oneListUserP">{{ user.user_name }}</p>
+        <button class="btn btn-danger mb-2 buttonDetails buttonDetailsUser" (click)="deleteUser(user.id)">X</button>
+      </li>
+    </ul>
+  </div>
+</div>

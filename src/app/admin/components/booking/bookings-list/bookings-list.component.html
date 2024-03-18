@@ -1,0 +1,83 @@
+<div class="container-fluid dashboardBkng" *ngFor="let data of dashboardData">
+  <div class="dashboardDate" >
+    <p class="dateInMonth">{{ data.bookingsDate.split('-')[0] }}</p>
+    <p class="monthInYear">{{ data.dateMonth }}</p>
+  </div>
+  <div class="dashboardCity">
+    <p class="dayInWeek">{{ data.dayInWeek }}</p>
+    <div class="cityPeople" *ngFor="let city of data.cityData">
+      <p class="dashCity">{{ city.city }}</p>
+      <p class="dashTotalPpl">{{ city.totalPeople }}</p>
+    </div>
+  </div>
+</div>
+<mat-tab-group class="bookingsList" (selectedTabChange)="onTabChange($event)">
+  <mat-tab label="Next 30 days">
+    <ng-template mat-tab-label class="mat-tab-label">
+      Next 30 days
+    </ng-template>
+    <div class="list row mt-5">
+      <mat-form-field>
+        <mat-select [(ngModel)]="forCity" (ngModelChange)="onCityChange($event)" [disabled]="!citiesPermission">
+          <mat-option value="All">All</mat-option>
+          <mat-option value="Belgrade">Belgrade</mat-option>
+          <mat-option value="Lisabon">Lisabon</mat-option>
+          <mat-option value="Budva">Budva</mat-option>
+          <mat-option value="Barcelona">Barcelona</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="col-md-12 mt-3 listItems">
+        <div class="rowLabelList">
+          <p class="oneParagraphLabel">Day</p>
+          <p class="oneParagraphLabel">Date</p>
+          <p class="oneParagraphLabel">People</p>
+        </div>
+        <ul class="list-group mb-3">
+          <ng-container *ngFor="let booking of forDate30Bookings">
+            <li class="oneRowList" (click)="onRowClick(booking.dateOfBookings, forCity)">
+              <p class="oneListParagraph">{{ booking.dayOfWeek }}</p>
+              <p class="oneListParagraph">{{ booking.dateOfBookings }}</p>
+              <p class="oneListParagraph">{{ booking.totalPeople }}</p>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Next 90 days">
+    <ng-template mat-tab-label>
+      Next 90 days
+    </ng-template>
+    <div class="list row mt-5">
+      <mat-form-field>
+        <mat-select [(ngModel)]="forCity" (ngModelChange)="onCityChange($event)" [disabled]="!citiesPermission">
+          <mat-option value="All">All</mat-option>
+          <mat-option value="Belgrade">Belgrade</mat-option>
+          <mat-option value="Lisabon">Lisabon</mat-option>
+          <mat-option value="Budva">Budva</mat-option>
+          <mat-option value="Barcelona">Barcelona</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="col-md-12 mt-3 listItems">
+        <div class="rowLabelList">
+          <p class="oneParagraphLabel">Day</p>
+          <p class="oneParagraphLabel">Date</p>
+          <p class="oneParagraphLabel">People</p>
+        </div>
+        <ul class="list-group mb-3">
+          <ng-container *ngFor="let booking of forDate90Bookings">
+            <li class="oneRowList" (click)="onRowClick(booking.dateOfBookings, forCity)">
+              <p class="oneListParagraph">{{ booking.dayOfWeek }}</p>
+              <p class="oneListParagraph">{{ booking.dateOfBookings }}</p>
+              <p class="oneListParagraph">{{ booking.totalPeople }}</p>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </mat-tab>
+  <!-- <button type="button" class="btn btn-primary createBooking" id="addBkngCreateBtn" (click)="saveBooking()" [disabled]="!isBookingValid()">CREATE</button> -->
+</mat-tab-group>
+<div class="addCreateBtnDiv">
+  <button type="button" class="btn btn-primary createBooking openNewBkng" [routerLink]="'/add'" id="addBkngCreateBtn">NEW BOOKING</button>
+</div>

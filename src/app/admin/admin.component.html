@@ -1,0 +1,21 @@
+<mat-drawer-container class="sidenav-container" [hasBackdrop]="true">
+  <mat-drawer #sidenav class="sidenav" fixedInViewport mode="push" position="end">
+    <h2>Admin Panel</h2>
+    <mat-nav-list>
+      <mat-list-item routerLink="/bookings" routerLinkActive="active-link" (click)="sidenav.close()">Bookings</mat-list-item>
+      <mat-list-item *ngIf="isAdminUser" routerLink="/users" routerLinkActive="active-link" (click)="sidenav.close()">Users</mat-list-item>
+      <mat-list-item *ngIf="isAdminUser" routerLink="/website" routerLinkActive="active-link" (click)="sidenav.close()">Website</mat-list-item>
+      <mat-list-item *ngIf="isAdminUser" routerLink="/statistics" routerLinkActive="active-link" (click)="sidenav.close()">Statistics</mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="menuDiv d-flex justify-content-end">
+      <button class="navMenuButton" *ngIf="isLoggedIn && isAdminUser && isMobile" mat-icon-button (click)="sidenav.toggle()">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div class="container mt-5">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

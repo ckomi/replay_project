@@ -1,0 +1,43 @@
+    <div class="form-group">
+      <label for="city">City:</label>
+      <select class="form-control" id="city" name="city" [(ngModel)]="forCity" [disabled]="!citiesPermission" (change)="onCityChange($event)" required>
+        <option value="Belgrade">Belgrade</option>
+        <option value="Budva">Budva</option>
+        <option value="Lisabon">Lisabon</option>
+        <option value="Barcelona">Barcelona</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="booking.name" (blur)="validateName()" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="booking.phone_number" (blur)="validatePhone()" required>
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="date" name="date" [(ngModel)]="booking.date" (blur)="validateDate()" required>
+    </div>
+    <div class="form-group">
+      <label for="payment">Payment:</label>
+      <select class="form-control" id="payment" name="payment" [(ngModel)]="booking.payment_type" required>
+        <option value="Cash">Cash</option>
+        <option value="Viator">Viator</option>
+        <option value="GetYourGuide">GetYourGuide</option>
+        <option value="Direct">Direct</option>
+        <option value="Others">Others</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="totalPeople">Total people:</label>
+      <input type="number" class="form-control" id="totalPeople" name="totalPeople" [(ngModel)]="booking.total_people" (blur)="validateTotalPeople()" required min="1" pattern="[0-9]+" inputmode="numeric">
+    </div>
+    <div class="form-group">
+      <label for="totalMoney">Total money:</label>
+      <input type="number" class="form-control" id="totalMoney" name="totalMoney" [(ngModel)]="booking.total_money" (blur)="validateTotalMoney()" required min="1" pattern="[0-9]+" inputmode="numeric">
+    </div>
+    <div class="addBookingBtns">
+      <button type="button" class="btn btn-warning createBooking" id="addBkngCancelBtn" [routerLink]="'/'">CANCEL</button>
+      <button type="button" class="btn btn-primary createBooking" id="addBkngCreateBtn" (click)="saveBooking()" [disabled]="!isBookingValid()">CREATE</button>
+    </div>

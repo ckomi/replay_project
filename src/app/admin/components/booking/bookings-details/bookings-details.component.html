@@ -1,0 +1,67 @@
+<div class="container bookingsDetailsContainer">
+  <h2>{{ formatDateFrontend(selectedDate) }}</h2>
+  <h5 class="bDetailsH5"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ cityFromRoute }}</h5>
+  <div class="showBookingsForDate" *ngIf="bookingsForDate.length > 0; else noBookings">
+    <ul class="list-group">
+      <li class="list-group-item forDateBookingRow" *ngFor="let booking of bookingsForDate">
+        <div class="row">
+          <div class="col-md-10 col-sm-12 infoDiv">
+            <div class="row infoDivRoww">
+              <div class="col-md-6 col-sm-12 infoRowDiv">
+                <div class="booking-info">
+                  <p><strong>Name:</strong> {{ booking.name }}</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 infoRowDiv">
+                <div class="booking-info">
+                  <p><strong (click)="openWhatsapp(booking.phone_number)">Phone:</strong> {{ booking.phone_number }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-12 infoRowDiv">
+                <div class="booking-info">
+                  <p><strong>Payment:</strong> {{ booking.payment_type }}</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 infoRowDiv">
+                <div class="booking-info">
+                  <p><strong>Date:</strong> {{ booking.date | date: 'dd-MM-yyyy' }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-12 infoRowDiv">
+                <div class="booking-info">
+                  <p><strong>People:</strong> {{ booking.total_people }}</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 infoRowDiv">
+                <div class="booking-info">
+                  <p><strong>Money:</strong> {{ booking.total_money }} €</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-12 dugmadDivWraper d-flex mt-md-0 mt-2">
+            <div class="d-flex dugmadDiv">
+              <button (click)="deleteBooking(booking)" class="btn btn-danger mb-2 buttonDetails"><i class="fa fa-trash"></i></button>
+              <button [routerLink]="'/bookings/' + (booking.date ? formatDate(booking.date) : '') + '/' + cityFromRoute + '/' + booking.id" class="btn btn-primary buttonDetails" id="buttonEdit"><i class="fa fa-pencil"></i></button>
+            </div>
+            <div class="bookingsCity">
+              <p class="bookingsCityP"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ booking.city }} </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="summaryDetails">
+      <p><strong>Total People:</strong> {{ totalPeople }}</p>
+      <p><strong>Total Money:</strong> {{ totalMoney }} €</p>
+    </div>
+  </div>
+  <ng-template #noBookings>
+    <p class="noBookingsToShow">No bookings for this date!</p>
+  </ng-template>
+</div>

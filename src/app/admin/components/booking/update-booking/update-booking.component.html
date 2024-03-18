@@ -1,0 +1,46 @@
+<div class="form-group">
+  <label for="city">City:</label>
+  <select class="form-control" id="city" name="city" [(ngModel)]="booking.city" [disabled]="!citiesPermission" (change)="onCityChange($event)" required>
+    <option value="Belgrade">Belgrade</option>
+    <option value="Budva">Budva</option>
+    <option value="Lisabon">Lisabon</option>
+    <option value="Barcelona">Barcelona</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="name">Name:</label>
+  <input type="text" class="form-control" id="name" name="name" [(ngModel)]="booking.name" (blur)="validateName()" (change)="onNameChange($event)" required>
+</div>
+<div class="form-group">
+  <label for="phone">Phone:</label>
+  <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="booking.phone_number" (blur)="validatePhone()" (change)="onPhoneChange($event)" required>
+</div>
+<div class="form-group">
+  <label for="date">Date:</label>
+  <input type="date" class="form-control" id="date" name="date" [(ngModel)]="formattedDate" (change)="updateDate($event)" (input)="onDateChange($event)" required>
+</div>
+
+<div class="form-group">
+  <label for="payment">Payment:</label>
+  <select class="form-control" id="payment" name="payment" [(ngModel)]="booking.payment_type" (change)="onPaymentChange($event)" required>
+    <option value="Cash">Cash</option>
+    <option value="Viator">Viator</option>
+    <option value="GetYourGuide">GetYourGuide</option>
+    <option value="Direct">Direct</option>
+    <option value="Others">Others</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="totalPeople">Total people:</label>
+  <input type="number" class="form-control" id="totalPeople" name="totalPeople" [(ngModel)]="booking.total_people" (blur)="validateTotalPeople()" (change)="onTotalPeopleChange($event)" required min="1" pattern="[0-9]+" inputmode="numeric">
+</div>
+<div class="form-group">
+  <label for="totalMoney">Total money:</label>
+  <input type="number" class="form-control" id="totalMoney" name="totalMoney" [(ngModel)]="booking.total_money" (blur)="validateTotalMoney()" (change)="onTotalMoneyChange($event)" required min="1" pattern="[0-9]+" inputmode="numeric">
+</div>
+<div class="addBookingBtns">
+  <button type="button" class="btn btn-warning createBooking" id="addBkngCancelBtn" (click)="cancelUpdate()">CANCEL</button>
+  <button type="button" class="btn btn-primary createBooking" id="addBkngCreateBtn" (click)="saveBooking()" [disabled]="!formChanged || !isBookingValid()">UPDATE</button>
+</div>
+
+

@@ -1,0 +1,25 @@
+.dashboardBkng{
+  border-radius: 20px;
+  background-color: rgb(64, 64, 64, 0.4);;
+  width: 50%;
+  padding: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+@media (max-width: 1450px) {
+  .dashboardBkng{
+    width: 70%;
+  }
+}
+@media (max-width: 760px) {
+  .dashboardBkng{
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .dashboardBkng {
+    width: 90%;
+  }
+}
