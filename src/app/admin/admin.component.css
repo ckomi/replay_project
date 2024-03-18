@@ -1,0 +1,609 @@
+
+body{
+  background-color: #0A0909 !important;
+
+}
+html{
+  background-color: #0A0909 !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none !important;
+  -webkit-appearance: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+h1,h2,h3,h4,h5,h6{
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.container {
+  min-height: 100vh !important;
+  height: auto !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+/*=================================================================*/
+/*======================== LOGIN COMPONENT ========================*/
+/*=================================================================*/
+.errorMsgs {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin-top: 8px;
+  color: red;
+  font-size: 14px;
+}
+.showError {
+  opacity: 1;
+}
+/*=================================================================*/
+/*=================== FORME PROVERITI DODATNO =====================*/
+/*=================================================================*/
+.form-group{
+  width: 300px !important;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+label{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.form-control{
+  padding: 10px !important;
+  border: 2px solid rgb(64, 64, 64) !important;
+  border-radius: 10px !important;
+  border-color: rgb(64, 64, 64) !important;
+  background-color: #0A0909 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.createBooking{
+  margin-top: 30px !important;
+  padding: 10px 20px 10px 20px !important;
+  border: none !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  margin: 45px !important;
+}
+#addBkngCreateBtn{
+  color: azure;
+  background-color: #1d9651e0 !important;
+}
+#addBkngCreateBtn:hover{
+  background-color: rgba(29, 203, 105, 0.878) !important;
+}
+#addBkngCancelBtn{
+  background-color: #d39101 !important;
+  color: #0A0909 !important;
+}
+#addBkngCancelBtn:hover{
+  background-color: #9c6b00 !important;
+}
+.addBookingBtns{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.invalid {
+  border-color: rgba(255, 50, 50, 0.6) !important;
+}
+.disabled {
+  background-color: rgb(64, 64, 64) !important;
+  cursor: not-allowed !important;
+}
+.disabled:hover {
+  background-color: rgb(64, 64, 64) !important;
+}
+/*=================================================================*/
+/*=================== SIDENAV BOOKING LIST ========================*/
+/*=================================================================*/
+.mat-sidenav-content, .mat-nav-list, .mat-drawer, .mat-drawer-container{
+  background-color: #0A0909 !important;
+}
+.mat-list-item{
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.mat-list-item:hover{
+  background-color: #1F1E1E !important;
+}
+.active-link{
+  background-color: #1F1E1E !important;
+}
+.mat-drawer-side.mat-drawer-end{
+  border: none !important;
+}
+.mat-drawer:not(.mat-drawer-side) {
+  position: fixed;
+}
+
+.mat-drawer-backdrop {
+  position: fixed !important;
+}
+.sidenav h2{
+  padding: 20px;
+}
+.menuDiv{
+  padding-top: 30px;
+  padding-right: 30px;
+}
+.navMenuButton{
+ background-color: transparent;
+ border: none;
+}
+.navMenuButton i{
+  font-size: 35px;
+  color: rgba(255, 255, 255, 0.8);
+}
+/*=================================================================*/
+/*==================== DASHBOARD COMPONENT ========================*/
+/*=================================================================*/
+.dashboardDate{
+  border-radius: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min-content;
+  height: min-content;
+  padding: 20px;
+}
+.dateInMonth{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 150px;
+  line-height:  0.7;
+  font-weight: bolder;
+  margin: 0px;
+}
+.monthInYear{
+color: rgba(255, 255, 255, 0.8);
+font-size: 50px;
+font-weight: 600;
+line-height:  0.8;
+margin: 25px 0px 0px 0px;
+}
+/* RIGHT SIDE */
+.dashboardCity{
+  background-color: rgba(20, 20, 20, 0.6);
+  border-radius: 20px;
+  width: 100%;
+  padding: 20px;
+}
+.dayInWeek{
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  font-size: 50px;
+  line-height: 0.8;
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+}
+.cityPeople{
+  width: 100%;
+  font-size: 20px;
+  line-height: 0.8;
+  padding-top: 20px;
+  color: rgb(150, 150, 150, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cityPeople p{
+  margin: 0;
+}
+/*=================================================================*/
+/*======================TABOVI BOOKING LIST========================*/
+/*=================================================================*/
+.mat-tab-group{
+  width: 50%;
+  margin: 0 auto;
+}
+.bookingsList{
+  padding-bottom: 20px;
+}
+.mat-tab-label{
+  color: rgb(255, 255, 255) !important;
+  opacity: 1 !important;
+}
+.mat-ink-bar {
+  background-color: rgba(255, 50, 50, 1) !important;
+}
+.mat-tab-body{
+  background-color: #0A0909;
+}
+.mat-tab-label .mat-tab-label-content{
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/*=================================================================*/
+/*===================== DROPDOWN BOOKING LIST =====================*/
+/*=================================================================*/
+.mat-select{
+  padding-left: 14px !important;
+}
+.mat-form-field-wrapper{
+  padding-bottom: 30px !important;
+  margin-bottom: -20px !important;
+}
+.mat-form-field-infix{
+  padding-bottom: 0px !important;
+}
+.mat-select-value, .mat-select-arrow{
+  color: rgb(255, 255, 255, 0.8) !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: unset !important;
+}
+.mat-form-field-underline{
+  background-color: rgb(255, 255, 255, 0.8) !important;
+}
+.mat-form-field-ripple{
+  background-color: rgba(255, 50, 50, 1) !important;
+}
+.mat-select-panel{
+  background-color: rgb(64, 64, 64, 1) !important;
+}
+.mat-option{
+  color: rgb(255, 255, 255, 0.8) !important;
+}
+.mat-option.mat-active, .mat-option:hover {
+  background-color: rgb(42, 42, 42) !important;
+}
+.mat-form-field-disabled .mat-form-field-underline {
+  border: 1px solid rgba(199, 199, 199, 0.6) !important;
+}
+
+/*------------- Booking list ---------------*/
+.list{
+  width: 100%;
+  margin: 0 auto !important;
+  overflow-x: hidden !important;
+}
+.row .mt-3{
+  margin-top: 0px !important;
+}
+.listItems{
+  width: 100% !important;
+}
+.oneRowList{
+  margin-top: 20px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(64, 64, 64, 0.4);
+  cursor: pointer;
+}
+.rowLabelList{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px 5px 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight:500;
+}
+.oneListParagraph, .oneParagraphLabel{
+  margin-bottom: 0px;
+}
+.oneRowList p:first-child, .rowLabelList p:first-child{
+  width: 20%;
+}
+.oneRowList p:nth-child(2), .rowLabelList p:nth-child(2) {
+  width: 60%;
+}
+.oneRowList p:nth-child(3), .rowLabelList p:nth-child(3) {
+  width: 20%;
+  text-align: end;
+}
+.addCreateBtnDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.openNewBkng{
+  margin: 20px 0px 50px 0px !important;
+}
+/*=================================================================*/
+/*======================= BOOKING DETAILS =========================*/
+/*=================================================================*/
+.bookingsDetailsContainer{
+  width: 50% !important;
+}
+.bDetailsH5{
+  font-size: 18px;
+  color: rgb(150, 150, 150, 0.8) !important;
+}
+.bDetailsH5 i{
+  margin-right: 5px;
+}
+.list-group-item{
+  border-color: none !important;
+  border: 0px !important;
+  border-radius: 20px !important;
+}
+.forDateBookingRow{
+  background-color: rgb(64, 64, 64, 0.4) !important;
+  margin-top: 20px;
+}
+.booking-info p{
+  color: rgba(255, 255, 255, 0.8);
+}
+.noBookingsToShow{
+  color: rgba(255, 255, 255, 0.6);
+}
+/*=================================================================*/
+/*===================== UPDATE COMPONENTA =========================*/
+/*=================================================================*/
+.dugmadDivWraper{
+  flex-direction: column;
+  align-items: end;
+  padding-top: 8px;
+}
+.dugmadDiv{
+  flex-direction: column !important;
+}
+.bookingsCity{
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0px 0px 0px;
+}
+.bookingsCity p, .bookingsCity i{
+  color: rgb(150, 150, 150, 0.8);
+}
+.bookingsCityP{
+  margin: 0;
+}
+#buttonEdit{
+  background-color: #d39101;
+  color: #0A0909;
+  border: none;
+  padding: 7px 13px !important;
+}
+#buttonEdit:hover{
+  background-color: #9c6b00;
+}
+.infoDiv p{
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.summaryDetails{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  background-color: rgb(64, 64, 64, 0.4);
+  color: rgb(255, 255, 255, 0.8);
+  padding: 10px;
+  display: flex;
+}
+.summaryDetails p{
+  padding: 10px;
+  margin: 0;
+  width: 50%;
+  letter-spacing: 1px;
+}
+/*=================================================================*/
+/*======================== USERS PAGE =============================*/
+/*=================================================================*/
+.listUserItems{
+  margin: 0 auto;
+  width: 320px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.listUserItems .mb-3{
+  margin-bottom: 40px !important;
+}
+.rowLabelUserList{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px 5px 15px !important;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight:500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  justify-content:flex-start
+}
+.oneRowUserList{
+  margin-top: 20px !important;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(64, 64, 64, 0.4);
+  cursor: pointer;
+}
+.oneRowUserList p:first-child, .rowLabelUserList p:first-child{
+  width: 100px;
+  padding-top: 1px;
+}
+.oneRowUserList p:nth-child(2), .rowLabelUserList p:nth-child(2) {
+  width: 100px;
+  padding-top: 1px;
+}
+.oneRowUserList > *:nth-child(3){
+  margin: 0 0 0 auto !important;
+  padding: 0 !important;
+}
+.oneListUserP{
+  margin: 0;
+}
+.oneParagraphUserL{
+  margin: 0 !important;
+}
+.buttonDetailsUser{
+  margin-right: 13px !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px !important;
+}
+/*=================================================================*/
+/*======================= STATISTICS PAGE =========================*/
+/*=================================================================*/
+.statisticH1{
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#chartWrapper{
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(24, 24, 24, 1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  padding-bottom: 20px;
+}
+.dashStatistics{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+.totalBkgStat, .totalPplStat, .totalMnyStat{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.3%;
+}
+.dashBrdTotValue{
+  font-size: 30px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 25px 0px 0px 0px;
+}
+.dashBrdTotLabel{
+  font-size: 18px;
+  color: rgb(150, 150, 150, 0.8);
+  margin: 5px 0px 20px 0px;
+}
+.chartH3{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+.chartsExampler{
+  width: 100%;
+  padding: 20px;
+}
+/*=================================================================*/
+/*=========================== RESPONSIVE ==========================*/
+/*=================================================================*/
+@media (max-width: 1450px) {
+  .bookingsDetailsContainer {
+    width: 70% !important;
+  }
+  .mat-tab-group{
+    width: 70% !important;
+  }
+  #chartWrapper{
+    width: 100%;
+  }
+}
+@media (max-width: 760px) {
+  .dashboardDate{
+    margin: 0 auto;
+  }
+  .mat-tab-group{
+    width: 80% !important;
+  }
+  .dugmadDivWraper{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 8px 3px 5px !important;
+  }
+  .dugmadDiv{
+    flex-direction: row !important;
+    order: 1;
+  }
+  .bookingsCity{
+    order: 0;
+    padding-left: 12px;
+    padding-bottom: 5px;
+  }
+  .bookingsCity p, .bookingsCity i{
+    color: rgb(150, 150, 150, 0.8);
+  }
+  .bookingsCityP{
+    margin: 0;
+  }
+  .buttonDetails{
+    margin: 8px;
+    border-radius: 20px !important;
+  }
+  .buttonDetails i{
+    margin: 0;
+  }
+  .summaryDetails{
+    flex-direction: column;
+  }
+  .summaryDetails p{
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .bookingsDetailsContainer {
+    width: 90% !important;
+  }
+  .mat-tab-group{
+    width: 90% !important;
+  }
+  .menuDiv{
+    padding-top: 20px;
+    padding-right: 10px;
+  }
+  .oneRowList p:first-child, .rowLabelList p:first-child {
+    width: 30%;
+  }
+  .oneRowList p:nth-child(2), .rowLabelList p:nth-child(2) {
+    width: 50%;
+  }
+  .oneRowList p:nth-child(3), .rowLabelList p:nth-child(3) {
+    width: 20%;
+  }
+  .chartsExampler{
+    padding: 0px;
+  }
+}
+/*=================================================================*/
+/*============================= INPUTS ============================*/
+/*=================================================================*/
+input[type="date"]::-webkit-date-edit-text,
+input[type="date"]::-webkit-date-edit-month-field,
+input[type="date"]::-webkit-date-edit-day-field,
+input[type="date"]::-webkit-date-edit-year-field {
+  color: rgba(255, 255, 255, 0.8);
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  color: rgba(255, 255, 255, 0.8);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button  {
+  -webkit-appearance: none;
+  margin: 0;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+.form-control:focus,
+.uneditable-input:focus {
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px rgba(255, 255, 255, 0.8) !important;
+  outline: 0 none !important;
+}

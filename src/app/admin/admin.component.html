@@ -2,10 +2,10 @@
   <mat-drawer #sidenav class="sidenav" fixedInViewport mode="push" position="end">
     <h2>Admin Panel</h2>
     <mat-nav-list>
-      <mat-list-item routerLink="/bookings" routerLinkActive="active-link" (click)="sidenav.close()">Bookings</mat-list-item>
-      <mat-list-item *ngIf="isAdminUser" routerLink="/users" routerLinkActive="active-link" (click)="sidenav.close()">Users</mat-list-item>
-      <mat-list-item *ngIf="isAdminUser" routerLink="/website" routerLinkActive="active-link" (click)="sidenav.close()">Website</mat-list-item>
-      <mat-list-item *ngIf="isAdminUser" routerLink="/statistics" routerLinkActive="active-link" (click)="sidenav.close()">Statistics</mat-list-item>
+      <mat-list-item routerLink="/mikrobuva/bookings" routerLinkActive="active-link" (click)="sidenav.close()">Bookings</mat-list-item>
+      <mat-list-item *ngIf="isAdminUser" routerLink="/mikrobuva/users" routerLinkActive="active-link" (click)="sidenav.close()">Users</mat-list-item>
+      <mat-list-item *ngIf="isAdminUser" routerLink="/mikrobuva/website" routerLinkActive="active-link" (click)="sidenav.close()">Website</mat-list-item>
+      <mat-list-item *ngIf="isAdminUser" routerLink="/mikrobuva/statistics" routerLinkActive="active-link" (click)="sidenav.close()">Statistics</mat-list-item>
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>

@@ -21,7 +21,7 @@ export class CityAccessGuard implements CanActivate {
     if (userCity === 'All' || userCity === targetCity) {
       return true;
     } else {
-      this.router.navigate(['/bookings']);
+      this.router.navigate(['/mikrobuva/bookings']);
       return false;
     }
   }

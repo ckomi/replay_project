@@ -54,7 +54,7 @@ import { AuthService } from './services/auth.service';
     MatIconModule,
     MatListModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, AuthService],
   bootstrap: [AdminComponent]
 })
 export class AdminModule { }

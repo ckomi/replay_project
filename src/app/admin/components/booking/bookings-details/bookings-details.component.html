@@ -46,7 +46,7 @@
           <div class="col-md-2 col-12 dugmadDivWraper d-flex mt-md-0 mt-2">
             <div class="d-flex dugmadDiv">
               <button (click)="deleteBooking(booking)" class="btn btn-danger mb-2 buttonDetails"><i class="fa fa-trash"></i></button>
-              <button [routerLink]="'/bookings/' + (booking.date ? formatDate(booking.date) : '') + '/' + cityFromRoute + '/' + booking.id" class="btn btn-primary buttonDetails" id="buttonEdit"><i class="fa fa-pencil"></i></button>
+              <button [routerLink]="'/mikrobuva/bookings/' + (booking.date ? formatDate(booking.date) : '') + '/' + cityFromRoute + '/' + booking.id" class="btn btn-primary buttonDetails" id="buttonEdit"><i class="fa fa-pencil"></i></button>
             </div>
             <div class="bookingsCity">
               <p class="bookingsCityP"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ booking.city }} </p>

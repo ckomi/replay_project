@@ -38,6 +38,6 @@
       <input type="number" class="form-control" id="totalMoney" name="totalMoney" [(ngModel)]="booking.total_money" (blur)="validateTotalMoney()" required min="1" pattern="[0-9]+" inputmode="numeric">
     </div>
     <div class="addBookingBtns">
-      <button type="button" class="btn btn-warning createBooking" id="addBkngCancelBtn" [routerLink]="'/'">CANCEL</button>
+      <button type="button" class="btn btn-warning createBooking" id="addBkngCancelBtn" [routerLink]="'/mikrobuva'">CANCEL</button>
       <button type="button" class="btn btn-primary createBooking" id="addBkngCreateBtn" (click)="saveBooking()" [disabled]="!isBookingValid()">CREATE</button>
     </div>

@@ -153,7 +153,7 @@ export class BookingsListComponent implements OnInit, OnDestroy {
   }
 
   onRowClick(date: string, city: string): void {
-    this.router.navigate(['/bookings', date, city]);
+    this.router.navigate(['/mikrobuva/bookings', date, city]);
   }
   getBookingsForDashboardCity(): void {
     this.bookingsSubscription = this.bookingService.allBookings$.subscribe({

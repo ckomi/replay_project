@@ -75,7 +75,7 @@ export class BookingsDetailsComponent implements OnInit, OnDestroy {
   redirectIfNoBookings(): void {
     setTimeout(() => {
       if (this.bookingsForDate.length === 0) {
-        this.router.navigate(['/bookings']);
+        this.router.navigate(['/mikrobuva/bookings']);
       }
     }, 1500);
   }

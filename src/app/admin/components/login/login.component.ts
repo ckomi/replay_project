@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
     );
     if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/bookings']);
+      this.router.navigate(['/mikrobuva/bookings']);
    }
   }
 
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.authService.setToken(res.token);
           this.adminComponent.onLoginSuccess();
           this.errorMessage = '';
-          this.router.navigate(['/bookings']);
+          this.router.navigate(['/mikrobuva/bookings']);
         },
         error => {
           this.errorMessage = error || 'An unexpected error occurred.';
